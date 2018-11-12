@@ -4,11 +4,13 @@
 //declare(strict_types=1);
 
 /**
- * AUTHOR : AVONTURE Christophe.
+ * AUTHOR       : AVONTURE Christophe.
  *
  * Written date : 11 november 2018
  *
  * Simple Base64 encode/decode javascript interface.
+ *
+ * Use it online: https://www.avonture.be/base64
  */
 
 define('REPO', 'https://github.com/cavo789/base64');
@@ -69,24 +71,43 @@ if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
                 // Use a regex to detect if the given string is a base64 one or not
                 // @see https://stackoverflow.com/a/35002237/1065340
                 var $is64 = false;
-                var base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
+                
+                var base64regex = /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/;
 
                 try {
                     $is64 = base64regex.test($txt);
+                    // The check isn't reliable enough; f.i. the word "mindmaps" will be detected a
+                    // an base64 encoded string while it isn't ("mindmap" (without final "s" is ok))
+
+                    if ($is64) {
+                        // Make sure, try to decode the string; if an error occurred, then it wasn't
+                        // a base64 encoded string.
+                        try {
+                            $result = decodeURIComponent(escape(window.atob($txt)));
+                        } catch (error) {
+                           $is64 = false;
+                        }
+                    }
                 } catch(error) {
                 }
 
                 if (!$is64) {
                     // Correctly handle unicode 
                     // @see https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/Base64_encoding_and_decoding#The_Unicode_Problem
-                    $result = window.btoa(unescape(encodeURIComponent($txt)))
+                    try {
+                        //console.log('Convert from ASCII to base64');
+                        $result = window.btoa(unescape(encodeURIComponent($txt)));
+                    } catch (error) {
+                        console.log(error);
+                    }
                 } else {
                     try {
-                       $result = decodeURIComponent(escape(window . atob($txt)));
+                        //console.log('Convert from base64 to ASCII');
+                        $result = decodeURIComponent(escape(window.atob($txt)));
                     } catch (error) {
                     }
                 }
-
+                
                 if ($result !== '') {
                     // $result will be empty in case of conversion error
                     $('#txt').val($result);
