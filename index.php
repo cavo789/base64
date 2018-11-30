@@ -44,7 +44,12 @@ if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
 				white-space: -o-pre-wrap;	/* Opera 7 */
 				word-wrap: break-word;	   /* Internet Explorer 5.5+ */
 			}
-
+			details {
+				margin: 1rem;
+			}
+			summary {
+				font-weight: bold;
+			}
 			textarea {
 				margin-top: 10px;
 			}
