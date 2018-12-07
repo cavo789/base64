@@ -65,7 +65,6 @@ if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
 						textbox below then click on the Process button:</label>
 					<details>
 						<summary>How to use?</summary>
-
 						<div class="row">
 								<div class="col-sm">
 									<ul>
@@ -75,7 +74,7 @@ if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
 									</ul>
 								</div>
 								<div class="col-sm">
-									<img height="300px" src="https://raw.githubusercontent.com/cavo789/base64/master/images/demo.gif" alt="Demo">
+									<img src="https://raw.githubusercontent.com/cavo789/base64/master/images/demo.gif" alt="Demo">
 								</div>
 							</div>
 						</div>
