@@ -8,10 +8,4 @@ Just copy/paste your text into the text box as illustrated here below and click 
 
 The base64_encoded text will be decoded or the ASCII text will be base64 encoded. The `Process` button is a toggle button.
 
-Encode a string:
-
-![Encode](images/base64_encode.png)
-
-Decode a string:
-
-![Decode](images/base64_decode.png)
+![Encode](images/demo.gif)
