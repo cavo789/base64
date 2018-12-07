@@ -65,13 +65,18 @@ if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
 						textbox below then click on the Process button:</label>
 					<details>
 						<summary>How to use?</summary>
+
 						<div class="row">
-							<div class="col-sm">
-								<ul>
-									<li>Type (or paste) a text in the text area here below and 
-										click on the Process button; the text will be encoded.</li>
-									<li>If the text was already encoded, the text will be decoded.</li>
-								</ul>
+								<div class="col-sm">
+									<ul>
+										<li>Type (or paste) a text in the text area here below and 
+											click on the Process button; the text will be encoded.</li>
+										<li>If the text was already encoded, the text will be decoded.</li>
+									</ul>
+								</div>
+								<div class="col-sm">
+									<img height="300px" src="https://raw.githubusercontent.com/cavo789/base64/master/images/demo.gif" alt="Demo">
+								</div>
 							</div>
 						</div>
 					</details>
