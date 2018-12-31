@@ -11,12 +11,12 @@
  * Simple Base64 encode/decode javascript interface.
  *
  * Use it online: https://www.avonture.be/base64
+ *
+ * Last mod:
+ * 2018-12-31 - Abandonment of jQuery and migration to vue.js
  */
 
 define('REPO', 'https://github.com/cavo789/base64');
-
-// Sample string; with accentuated characters and
-$txt = '✓ The quick brown fox jumps over the lazy dog';
 
 // Get the GitHub corner
 $github = '';
@@ -64,9 +64,9 @@ if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
 					<label for="txt">Copy/Paste your text in the 
 						textbox below then click on the Process button:</label>
 					<how-to-use demo="https://raw.githubusercontent.com/cavo789/base64/master/images/demo.gif"></how-to-use>
-					<textarea class="form-control" rows="10" id="txt" name="txt" v-model="txt"></textarea>
+					<textarea class="form-control" rows="10" name="txt" v-model="txt"></textarea>
 				</div>
-				<button type="button" id="btnProcess" class="btn btn-primary" @click="processConvert">Process</button>				
+				<button type="button" class="btn btn-primary" @click="processConvert">Process</button>
 			</div>
 		</div>
 		<script src="https://unpkg.com/vue"></script>
@@ -98,7 +98,7 @@ if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
 			var app = new Vue({
 				el: '#app',
 				data: {
-					txt: '<?php echo $txt; ?>'
+					txt: '✓ The quick brown fox jumps over the lazy dog'
 				},
 				methods: {
 					processConvert() {
