@@ -63,7 +63,13 @@ if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
 				<div class="form-group">
 					<label for="txt">Copy/Paste your text in the 
 						textbox below then click on the Process button:</label>
-					<how-to-use demo="https://raw.githubusercontent.com/cavo789/base64/master/images/demo.gif"></how-to-use>
+					<how-to-use demo="https://raw.githubusercontent.com/cavo789/base64/master/images/demo.gif">
+						<ul>
+							<li>Type (or paste) a text in the text area here below and 
+								click on the Process button; the text will be encoded.</li>
+							<li>If the text was already encoded, the text will be decoded.</li>
+						</ul>
+					</how-to-use>
 					<textarea class="form-control" rows="10" name="txt" v-model="txt"></textarea>
 				</div>
 				<button type="button" class="btn btn-primary" @click="processConvert">Process</button>
@@ -83,11 +89,7 @@ if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
 						<summary>How to use?</summary>
 						<div class="row">
 								<div class="col-sm">
-									<ul>
-										<li>Type (or paste) a text in the text area here below and 
-											click on the Process button; the text will be encoded.</li>
-										<li>If the text was already encoded, the text will be decoded.</li>
-									</ul>
+									<slot></slot>
 								</div>
 								<div class="col-sm"><img v-bind:src="demo" alt="Demo"></div>
 							</div>
