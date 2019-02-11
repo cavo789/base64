@@ -10,7 +10,7 @@
  *
  * Simple Base64 encode/decode javascript interface.
  *
- * Use it online: https://www.avonture.be/base64
+ * Use it online: https://base64.avonture.be/
  *
  * Last mod:
  * 2018-12-31 - Abandonment of jQuery and migration to vue.js
