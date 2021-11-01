@@ -1,6 +1,6 @@
-![banner](images/banner.jpg)
-
 # Base64 encode / decode interface
+
+![banner](./banner.svg)
 
 > Simple javascript base64_encode / base64_decode interface
 
