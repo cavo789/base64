@@ -75,7 +75,7 @@ if (is_file($cat = __DIR__ . DIRECTORY_SEPARATOR . 'octocat.tmpl')) {
                 <button type="button" class="btn btn-primary" @click="processConvert">Process</button>
             </div>
         </div>
-        <script src="https://unpkg.com/vue"></script>
+        <script src="https://unpkg.com/vue@2"></script>
         <script type="text/javascript">
             Vue.component('how-to-use', {
                 props: {
